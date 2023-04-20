@@ -38,10 +38,8 @@ async function httpAbortLaunch(id) {
       method: "delete",
     });
   } catch (err) {
-    {
-      console.log(`%cError: ${err}`, "background-color: red");
-      return { ok: false };
-    }
+    console.log(`%cError: ${err}`, "background-color: red");
+    return { ok: false };
   }
 }
 
