@@ -4,6 +4,7 @@ const request = require("supertest");
 //This app is the express server file we made eariler
 const app = require("../../app");
 const { mongoConnect, mongoDisconnect } = require("../../services/mongo");
+const { loadPlanetsData } = require("../../models/planets.model");
 //The describe block gives a simple description of
 //what the test is trying to acomplish. The callback
 //function will contain all the other blocks
@@ -11,6 +12,7 @@ const { mongoConnect, mongoDisconnect } = require("../../services/mongo");
 describe("Launches API", () => {
   beforeAll(async () => {
     await mongoConnect();
+    await loadPlanetsData();
   });
 
   afterAll(async () => {
